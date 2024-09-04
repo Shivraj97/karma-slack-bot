@@ -1,10 +1,10 @@
+import { config } from "dotenv";
+config({ path: process.env.NODE_ENV === "production" ? ".env" : ".env.local" });
+
 import { createServer } from "http";
 import { parse } from "url";
 import next from "next";
 import app from "./src/lib/slackBot";
-
-import { config } from "dotenv";
-config({ path: ".env.local" });
 
 const dev = process.env.NODE_ENV !== "production";
 const hostname = "localhost";
